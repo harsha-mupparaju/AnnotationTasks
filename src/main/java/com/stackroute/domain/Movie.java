@@ -8,11 +8,15 @@ public class Movie {
 
     Actor actor;
 
+@Autowired
     public Movie(Actor actor) {
         this.actor = actor;}
 
+    public Actor getActor() {
+        return actor;
+    }
 
-        public void displayMovieInfo(){
+    public void displayMovieInfo(){
             System.out.println( " Actor Name =" +actor.getName() +" ,Actor Gender =" +actor.getGender()+
                     " ,Actor age ="+actor.getAge());
 

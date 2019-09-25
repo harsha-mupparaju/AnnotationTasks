@@ -1,5 +1,6 @@
 package com.stackroute;
 
+import com.stackroute.domain.Actor;
 import com.stackroute.domain.Movie;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
@@ -28,7 +29,6 @@ public class Main {
         movieInfo2.displayMovieInfo();
 
         System.out.println(movieInfo==movieInfo1);
-
 
 
     }
