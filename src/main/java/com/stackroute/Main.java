@@ -18,7 +18,18 @@ public class Main {
         */
 
         ApplicationContext context=new AnnotationConfigApplicationContext(AnnotationsConfig.class);
-        Movie movieInfo=context.getBean(Movie.class);
+        Movie movieInfo=context.getBean("movie",Movie.class);
         movieInfo.displayMovieInfo();
+
+        Movie movieInfo1=context.getBean("movie1",Movie.class);
+        movieInfo1.displayMovieInfo();
+
+        Movie movieInfo2=context.getBean("movie2",Movie.class);
+        movieInfo2.displayMovieInfo();
+
+        System.out.println(movieInfo==movieInfo1);
+
+
+
     }
 }
