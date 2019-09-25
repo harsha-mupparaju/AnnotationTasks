@@ -6,7 +6,10 @@ import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.stereotype.Component;
 
 
 public class Main {
@@ -18,9 +21,10 @@ public class Main {
         movieInfo1.displayMovieInfo();
         */
 
-        ApplicationContext context=new AnnotationConfigApplicationContext(AnnotationsConfig.class);
+       AbstractApplicationContext context=new AnnotationConfigApplicationContext(AnnotationsConfig.class);
         Movie movieInfo=context.getBean("movie",Movie.class);
         movieInfo.displayMovieInfo();
+
 
         Movie movieInfo1=context.getBean("movie1",Movie.class);
         movieInfo1.displayMovieInfo();
@@ -30,6 +34,6 @@ public class Main {
 
         System.out.println(movieInfo==movieInfo1);
 
-
+        context.registerShutdownHook();
     }
 }

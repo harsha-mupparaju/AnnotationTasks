@@ -1,18 +1,26 @@
 package com.stackroute;
 
+import com.stackroute.demo.BeanLifeCycleDemo;
 import com.stackroute.domain.Actor;
 import com.stackroute.domain.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
 import javax.xml.stream.FactoryConfigurationError;
-
+@ComponentScan("com.stackroute")
 @Configuration
 public class AnnotationsConfig {
+/*
+ @Bean
+ public BeanLifeCycleDemo lifecycle(){
+     return
+ }
+*/
 
-    @Bean
+    @Bean//(initMethod = "init method" ,destroyMethod = "destroy")
     public Movie movie(){
        return new Movie(actor());
     }

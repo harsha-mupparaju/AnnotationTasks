@@ -9,10 +9,22 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 @Component
 public class Movie implements BeanNameAware,BeanFactoryAware,ApplicationContextAware {
-
     Actor actor;
+    @PostConstruct
+    public void customInit(){
+        System.out.println("cutsom init is called");
+    }
+
+    @PreDestroy
+    public void customDestroy(){
+        System.out.println("custom destroy is called");
+    }
+
 
 @Autowired
     public Movie(Actor actor) {
@@ -27,6 +39,7 @@ public class Movie implements BeanNameAware,BeanFactoryAware,ApplicationContextA
                     " ,Actor age ="+actor.getAge());
 
         }
+
 
     @Override
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
