@@ -14,12 +14,12 @@ public class BeanLifeCycleDemo implements InitializingBean,DisposableBean {
 
     @Override
     public void destroy() throws Exception {
-        System.out.println("Initialising bean interface is called");
+        System.out.println("disposable bean interface is called");
     }
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        System.out.println("disposable bean interface is called");
+        System.out.println("Initialising bean interface is  called");
     }
 
 
