@@ -13,14 +13,8 @@ import javax.xml.stream.FactoryConfigurationError;
 @ComponentScan("com.stackroute")
 @Configuration
 public class AnnotationsConfig {
-/*
- @Bean
- public BeanLifeCycleDemo lifecycle(){
-     return
- }
-*/
 
-    @Bean//(initMethod = "init method" ,destroyMethod = "destroy")
+    @Bean
     public Movie movie(){
        return new Movie(actor());
     }
