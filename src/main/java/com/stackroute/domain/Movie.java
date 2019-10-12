@@ -46,7 +46,7 @@ public class Movie implements BeanNameAware,BeanFactoryAware,ApplicationContextA
         System.out.println("BeanFactory aware");
     }
     @Override
-    public void setBeanName(String s) {
+    public void setBeanName(String beanName) {
         System.out.println("Bean name is calling");
 
     }
